@@ -160,3 +160,13 @@ def factorial(n):
 
 print("Factorial of 5:", factorial(5))
 
+#9 Reversing the stack
+stack = [1, 2, 3, 4, 5]
+stack.reverse()
+print("Reversed stack:", stack)
+ # OR
+stk=[]
+stk= list(map(int,input("Enter the number of elements in stack: ").split())) 
+print(f"The reversed stack is: {stk[::-1]}")
+
+#10 
