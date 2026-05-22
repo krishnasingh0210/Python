@@ -1,46 +1,44 @@
 import tkinter as tk
 
+messages = [
+    "Hello Krishna!",
+    "Welcome to Python",
+    "You are learning GUI",
+    "Great job!"
+]
 
-def say_hello():
-    label.config(text="Hello Krishna!")
+index = 0
 
+def next_message():
+    global index
 
-def change_color():
-    window.config(bg="lightblue")
+    label.config(text=messages[index])
 
+    index += 1
 
-def big_text():
-    label.config(font=("Arial", 30))
-
-
-# One function calling multiple functions
-def do_all():
-    say_hello()
-    change_color()
-    big_text()
+    if index >= len(messages):
+        index = 0
 
 
 window = tk.Tk()
 
-window.geometry("500x300")
+window.geometry("400x250")
 
 label = tk.Label(
     window,
-    text="Welcome",
-    font=("Arial", 20)
+    text="Press Button",
+    font=("Arial", 18)
 )
 
 label.pack(pady=20)
 
-
 button = tk.Button(
     window,
-    text="Click Me",
-    font=("Arial", 16),
-    command=do_all
+    text="Next Message",
+    font=("Arial", 14),
+    command=next_message
 )
 
-button.pack(pady=20)
-
+button.pack()
 
 window.mainloop()
